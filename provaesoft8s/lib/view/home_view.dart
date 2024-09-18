@@ -10,7 +10,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final UserService _userService = UserService();
+  final ViagemService _userService = ViagemService();
   var nameController = TextEditingController();
   var dataChegadaController = TextEditingController();
   var dataSaidaController = TextEditingController();

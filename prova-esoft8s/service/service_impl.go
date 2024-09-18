@@ -38,6 +38,10 @@ func (t ViagensServiceImpl) Update(viagem request.UpdateViagensRequest) {
 	viagemData, err := t.ViagemRepository.FindById(viagem.Id)
 	helper.ErrorPanic(err)
 	viagemData.Name = viagem.Name
+	viagemData.DataSaida = viagem.DataSaida
+	viagemData.DataChegada = viagem.DataChegada
+	viagemData.Valor = viagem.Valor
+
 	t.ViagemRepository.Update(viagemData)
 }
 
@@ -65,8 +69,11 @@ func (t ViagensServiceImpl) FindAll() []response.ViagensResponse {
 	var viagems []response.ViagensResponse
 	for _, value := range result {
 		viagem := response.ViagensResponse{
-			Id:   value.Id,
-			Name: value.Name,
+			Id:          value.Id,
+			Name:        value.Name,
+			DataSaida:   value.DataSaida,
+			DataChegada: value.DataChegada,
+			Valor:       value.Valor,
 		}
 		viagems = append(viagems, viagem)
 	}

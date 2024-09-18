@@ -17,7 +17,7 @@ func NewViagensRepositoryImpl(Db *gorm.DB) ViagensRepository {
 }
 
 func (t ViagensRepositoryImpl) Save(viagens model.Viagens) {
-	result := t.Db.Create(&viagens)
+	result := t.Db.Save(&viagens)
 	helper.ErrorPanic(result.Error)
 
 }

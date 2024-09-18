@@ -35,7 +35,7 @@ func main() {
 	routes := router.NewRouter(viagenController)
 
 	server := &http.Server{
-		Addr:           ":6666",
+		Addr:           ":3000",
 		Handler:        routes,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,

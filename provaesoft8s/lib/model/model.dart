@@ -4,7 +4,7 @@ class ViagemModel {
   int id;
   String dataChegada;
   String dataSaida;
-  double valor;
+  int valor;
   ViagemModel({
     required this.name,
     required this.id,
@@ -17,8 +17,8 @@ class ViagemModel {
     return <String, dynamic>{
       'name': name,
       'id': id,
-      'dataChegada': dataChegada,
-      'dataSaida': dataSaida,
+      'data_chegada': dataChegada,
+      'data_saida': dataSaida,
       'valor': valor
     };
   }
@@ -29,7 +29,7 @@ class ViagemModel {
       id: json['id'] as int,
       dataChegada: json['data_chegada'] as String,
       dataSaida: json['data_saida'] as String,
-      valor: json['valor'] as double,
+      valor: json['valor'] as int,
     );
   }
 }

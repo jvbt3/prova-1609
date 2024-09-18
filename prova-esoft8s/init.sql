@@ -1,8 +1,8 @@
 create table viagens
 (
-    id   int,
-    name varchar(255)
-    dataChegada date
-    dataSaida date
-    valor double
+    id   serial primary key,
+    name varchar(255),
+    dataChegada varchar(255),
+    dataSaida varchar(255),
+    valor float
 )
